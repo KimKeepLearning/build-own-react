@@ -132,6 +132,7 @@ let deletions = null
 function workLoop(deadline) {
   let shouldYield = false
   while (nextUnitOfWork && !shouldYield) {
+    console.log('nextUnitOfWork', nextUnitOfWork);
     nextUnitOfWork = performUnitOfWork(nextUnitOfWork)
     shouldYield = deadline.timeRemaining() < 1
   }
